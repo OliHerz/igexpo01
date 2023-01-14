@@ -4,11 +4,13 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php the_title(); ?></title>
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css">
-    <?php wp_head(); ?>
+<!-- wp_head(); permet d'insérer toutes les informations à mettre en entête -->
+    <?php wp_head(); ?> 
   </head>
-  <body>
-    <div class="wrap">
+  <body <?php body_class(); ?>>
+
+    <div class="container">
       <header>
-        <h1><a><?php bloginfo('name'); ?></a></h1>
         <h2><?php bloginfo('description'); ?></h2>
-      </header>
+         <h6>Voici l'entête de mon site </h6>
+        <br>
