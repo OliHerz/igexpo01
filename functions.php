@@ -21,12 +21,28 @@ if ( !function_exists( 'child_theme_configurator_css' ) ):
 endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
-// END ENQUEUE PARENT ACTION
-?>
+// --------------- END ENQUEUE PARENT ACTION --------------- //
 
-<?php
-// add_action('wp_head'); 
-// permet d'ajouter toutes les actions
-add_theme_support('title-tag');
+// Spécifie les actions que le thème peut supporter 
+function montheme_supports() {
+    add_theme_support('title-tag');
+    add_theme_support( 'menus' );
+    register_nav_menu( 'header', 'Menu en tête' );
+}
+
+// Spécifie les ajouts de styles/plugin/frameworks/library que le thème supporte
+function montheme_register_assets() {
+    wp_register_style('css', './style.css');
+    wp_enqueue_style('css');
+}
+
+function montheme_title_separator(){
+    return '|';
+}
+
+// ajoute les actions. en fonction de ('quelle actions est effectuée' -> 'quelle fonction cela lance')
+add_action('after_setup_theme', 'montheme_supports');
+add_action('wp_enqueue_scripts', 'montheme_register_assets');
+add_filter('document_title_separator', 'montheme_title_separator');
 
 ?>

@@ -11,6 +11,9 @@
 
     <div class="container">
       <header>
+      <?php
+          wp_nav_menu( array('theme_location' => 'Menu en tête',) );
+        ?>
         <h2><?php bloginfo('description'); ?></h2>
-         <h6>Voici l'entête de mon site </h6>
+        <h6>Voici l'entête de mon site </h6>
         <br>
