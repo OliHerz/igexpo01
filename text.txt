@@ -716,3 +716,91 @@ div.footerContent{
     <a href="#" class="card-link"> Another link</a>
   </div>
 </div>
+
+
+
+      <?php
+          wp_nav_menu([
+            array(
+              'theme_location' => 'Menu en tête',
+              
+            )]);
+        ?>
+
+
+      NAV AVANT
+          // wp_nav_menu([
+          //   'theme_location' => 'Menu en tête',
+          //   'container' => 'menuNAv',
+          //   'menu_class' => 'navLinks',
+          // ]);
+
+
+      NAV APRES
+        $args = array(
+          'menu' => 'Menu en tête',
+          'container' => false,
+
+          'container_class' => 'menu',
+          'items_wrap' => '
+            <img src="image1.jpg" alt="image 1" class="logoIgExpo">
+            <ul class="navLinks">
+              <li class="navItem"> <a href="#" class="navLien"> Présentation </a> </li>
+              <li class="navItem"> <a href="#" class="navLien"> Fonctionnement </a> </li>
+              <li class="navItem"> <a href="#" class="navLien"> Essayer </a> </li>
+              <li class="navItem"> <a href="#" class="navLien"> Contact </a> </li>
+            </ul>
+
+          <div class="containerIcon">
+            <img src="image2.jpg" alt="image 2" class="userIcon">
+          </div>
+          '
+        );
+        wp_nav_menu( $args );
+
+
+
+        
+        $args = array(
+          'menu' => 'Menu en tête',
+          'container' => 'navMenuTest',
+
+          'container_class' => 'menu',
+          'items_wrap' => '
+            <nav class="menuNav">
+              <div class="containerLogo"> <img src="image1.jpg" alt="Logo IG" class="logoIgExpo"> </div>
+              <ul class="navLinks">
+
+              </ul>
+              <div class="containerIcon"> <img src="image2.jpg" alt="Logo user" class="userIcon"> </div>    
+            </nav>'
+        );
+        wp_nav_menu();
+
+
+
+
+        // Découpage du header en bas pour le remplacer par le html du site
+          <?php body_class(); ?>>
+      <header>
+        <?php
+          wp_nav_menu([
+            'theme_location' => 'header',
+            'container' => false,
+            'menu_class' => 'navBar',
+          ])
+        ?>
+        <h6> FIN DU HEADER </h6>
+      </header>
+
+
+
+      Front-page.php
+      <?php get_header(); ?>
+
+<h1> <?php the_title() ?> </h1>
+
+
+<?php the_content() ?>
+
+<?php get_footer() ?>
