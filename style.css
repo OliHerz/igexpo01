@@ -101,7 +101,7 @@ header {
 .menu{
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 100px;
   padding: 5px 4vw;
   background-color:var(--light-text);
   max-width: 100%;
@@ -109,6 +109,7 @@ header {
   z-index: 50;
   gap: 1vw;
   position: sticky;
+  justify-content: space-between;
 }
 
 .navBar{
@@ -140,6 +141,10 @@ header {
   margin: 0rem 2rem;
 }
 
+.menuEnd {
+  display: flex;
+}
+
 /* --------------------------------- Colored Active NavBar ------------------------------- */
 .navLink:hover {
   color: var(--third-color);
@@ -149,16 +154,16 @@ header {
 /* --------------------------------- User Icon ------------------------------- */
 .containerIcon{
   height: auto;
-  width: 2vw;
+  width: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 45px;
 }
 
 .userIcon {
-  max-width: 2vw;
-  max-height: auto;
+  height: 100%;
+  width: 100%;
 }
 /* --------------------------------- FIN User Icon ------------------------------- */
 
@@ -247,19 +252,17 @@ header {
 }
 
 .constructRightContentMobile{
-  flex-direction: column;;
+  flex-direction: column;
 }
 
-.insideCardSection{
-  margin: 10px 0px;
-}
 
 .insideCardSection {
   display: flex;
   align-items: center;
   height: auto;
   flex: 1;
-  flex-direction: column;;
+  flex-direction: column;
+  margin: 10px 0px;
 }
 
 .containerCard {
@@ -455,13 +458,21 @@ div.footerContent{
   height: auto;
 }
 
-
+.card{
+  flex-direction: row;;
+}
 /* --------------------------------- FIN Footer ------------------------------- */
+
+@media (max-width : 1450px){
+.contentCard {
+  flex-direction: column;
+}
+}
 
 /* -------------------------- Media Query > 1255px  ------------------------ */
 @media (max-width : 1255px){
   header, .header {
-    height: auto;
+    height: 100px;
     padding-bottom: 0;
     margin: 0;
   }
@@ -495,7 +506,7 @@ div.footerContent{
   }
 
   .menu{
-    height:80px;
+    height:100px;
     padding: 0;
     display: flex;
     position: fixed;
@@ -526,7 +537,7 @@ div.footerContent{
   cursor: pointer;
   z-index: 200;
   right: 4vw;
-  top: 70px;
+  top: 80px;
 }
 
 /* ---------------------------------Hamburger lines ------------------------------- */
@@ -603,6 +614,12 @@ div.footerContent{
     height: 50px;;
   }
 
+
+    
+  .constructRightContentMobile{
+    flex-direction: column-reverse;
+  }
+
   .listImprim{
     margin-left: 20px;
   }
@@ -637,10 +654,7 @@ div.footerContent{
     .insideCardSection{
       margin: 10px 0px;
     }
-  
-    .constructRightContentMobile{
-      flex-direction: column-reverse;
-    }
+
   
 
     h2{
@@ -765,10 +779,7 @@ div.footerContent{
 
   /* --------------------------------- FOR WORDPRESS --------------------------------- */
 
-nav.menu{
-  /* background-color: #333333; */
-  height: 100px;
-}
+
 
 ul.navbar {
   padding: 0;

@@ -28,6 +28,7 @@ function montheme_supports() {
   add_theme_support('title-tag');
   add_theme_support( 'menus' );
   add_theme_support('custom-logo');
+  register_nav_menu( 'walker', 'walker' );
   register_nav_menu( 'header', 'Menu en tête' );
   register_nav_menu( 'footer', 'Menu pied de page' );
   add_image_size( 'custom-logo-size', 150, 150, true );
