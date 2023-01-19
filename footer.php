@@ -3,8 +3,6 @@
   <div class="footerContent">
     <div class="contentExcerptFooter">
       <p class="excerptFooter"> © Copyright 2022 | CUBE DE BOIS </p>
-    </div>
-    <?php the_custom_logo(); ?>
     <img src="<?php echo get_theme_file_uri('./img/linkedin.svg') ?>" alt="LinkedIn Logo" class="footerLogo">
   </div>
 </footer>

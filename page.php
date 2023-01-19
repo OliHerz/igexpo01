@@ -2,7 +2,6 @@
 
 <?php while(have_posts()){
   the_post();?>
-
 <!------------------------------ Section Construct -------------------------------->
 <article class="card"> 
         <div class="headerCard headerCardConstruct">
@@ -126,5 +125,8 @@
         </div>
     </article>
 <!----------------------------- FIN Essayez maintenant -------------------------------> 
+
+
+<?php the_content();?>
 
 <?php } get_footer(); ?>

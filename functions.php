@@ -23,20 +23,37 @@ add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
 
 // --------------- END ENQUEUE PARENT ACTION --------------- //
 
-// Spécifie les actions que le thème peut supporter 
+// Spécifie toutes les actions que le thème peut supporter  //
 function montheme_supports() {
+// permet de donner à la page son titre dans le nagivateur
   add_theme_support('title-tag');
+
+// permet d'ajouter les menus personnalisés
   add_theme_support( 'menus' );
+
+// permet d'intégrer un logo personnalisé dans la page (header, footer, ...)
   add_theme_support('custom-logo');
+
+// permet de redimentionner la taille du logo ajouté
+  add_image_size( 'custom-logo-size', 150, 150, true );
+
+// permet d'intégrer un walker de la class "walker", un header à mettre en 'Menu de tête', et footer en 'Menu pied de page'
   register_nav_menu( 'walker', 'walker' );
   register_nav_menu( 'header', 'Menu en tête' );
   register_nav_menu( 'footer', 'Menu pied de page' );
-  add_image_size( 'custom-logo-size', 150, 150, true );
 }
+
+
 
 // Spécifie les ajouts de styles/plugin/frameworks/library que le thème supporte
 function montheme_register_assets() {
+
+// Import des font Google
   wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap');
+
+// Import des icons sur FontAwesome
+  wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// Import de la feuille de style CSS Info + celle d'Elodie
   wp_enqueue_style('styles_css', get_stylesheet_uri());
   wp_enqueue_script('main-js', get_theme_file_uri('/js/main-script.js'),NULL,microtime(),true);
   wp_register_style('css', './css/style.css');
@@ -46,11 +63,13 @@ function montheme_title_separator(){
   return '|';
 }
 
+// permet de cibler la class Wordpress attribuée aux liens <li> dans la navlist, et changer cette class
 function montheme_menu_class($classes){
   $classes[] = 'navItem';
   return $classes; 
 }
 
+// permet de cibler la class Wordpress attribuée aux liens <a> dans la navlist, et changer cette class
 function montheme_menu_link_class($attrs){
   $attrs['class'] = 'navLink';
   return $attrs; 
@@ -70,4 +89,3 @@ add_theme_support('custom-logo', array(
     'flex-height' => true,
     'flex-width'  => true,
   ));
-?>

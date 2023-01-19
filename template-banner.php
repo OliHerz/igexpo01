@@ -1,5 +1,7 @@
 <?php
 /* 
 * Template Name : Page avec bannière 
-* Template POst Type : page, post
+* Template Post Type : page, post
 */
+
+?>

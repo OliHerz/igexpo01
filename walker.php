@@ -10,7 +10,7 @@ class MyCustom_Walker_Nav_Menu extends Walker_Nav_Menu {
 	private $menuLinkClass 				 = 'navLink';
 	private $submenuClass 				 = 'submenu__list';
 	private $submenuItemClass 		 = 'submenu__item';
- 
+
 	/**
 	 * Starts the list before the elements are added.
 	 *
